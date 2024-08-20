@@ -1,4 +1,5 @@
-﻿namespace ppedv.PuecklerPalace.Model
+﻿
+namespace ppedv.PuecklerPalace.Model
 {
     public class Bestellung : Entity
     {

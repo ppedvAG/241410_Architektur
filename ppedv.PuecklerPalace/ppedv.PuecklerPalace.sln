@@ -5,6 +5,10 @@ VisualStudioVersion = 17.12.35209.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.PuecklerPalace.Model", "ppedv.PuecklerPalace.Model\ppedv.PuecklerPalace.Model.csproj", "{F1C55868-915D-4187-95FA-BD099F1CFCAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.PuecklerPalace.Data.Db", "ppedv.PuecklerPalace.Data.Db\ppedv.PuecklerPalace.Data.Db.csproj", "{B505B36B-CDBF-448B-A693-2F8973C3191B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.PuecklerPalace.Data.Db.Tests", "ppedv.PuecklerPalace.Data.Db.Tests\ppedv.PuecklerPalace.Data.Db.Tests.csproj", "{A874A90A-B1F6-466B-954C-979342550068}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F1C55868-915D-4187-95FA-BD099F1CFCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1C55868-915D-4187-95FA-BD099F1CFCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C55868-915D-4187-95FA-BD099F1CFCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B505B36B-CDBF-448B-A693-2F8973C3191B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B505B36B-CDBF-448B-A693-2F8973C3191B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B505B36B-CDBF-448B-A693-2F8973C3191B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B505B36B-CDBF-448B-A693-2F8973C3191B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A874A90A-B1F6-466B-954C-979342550068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A874A90A-B1F6-466B-954C-979342550068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A874A90A-B1F6-466B-954C-979342550068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A874A90A-B1F6-466B-954C-979342550068}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
