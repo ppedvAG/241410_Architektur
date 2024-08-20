@@ -1,4 +1,4 @@
-﻿namespace ppedv.PuecklerPalace.Model
+﻿namespace ppedv.PuecklerPalace.Model.DomainModel
 {
     public enum Eistyp
     {

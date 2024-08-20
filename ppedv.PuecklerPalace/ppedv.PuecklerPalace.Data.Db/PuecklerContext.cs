@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ppedv.PuecklerPalace.Model;
+using ppedv.PuecklerPalace.Model.DomainModel;
 using System.Diagnostics;
 
 namespace ppedv.PuecklerPalace.Data.Db

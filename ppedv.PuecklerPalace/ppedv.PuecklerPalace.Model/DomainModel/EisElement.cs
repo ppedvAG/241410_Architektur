@@ -1,4 +1,4 @@
-﻿namespace ppedv.PuecklerPalace.Model
+﻿namespace ppedv.PuecklerPalace.Model.DomainModel
 {
     public abstract class EisElement : Entity
     {
@@ -7,6 +7,7 @@
         public bool Vegetarisch { get; set; } = true;
         public bool Vegan { get; set; } = false;
         public virtual ICollection<Zutat> Zutaten { get; set; } = new HashSet<Zutat>();
+        public virtual ICollection<BestellPosition> Positionen { get; set; } = new HashSet<BestellPosition>();
 
     }
 }

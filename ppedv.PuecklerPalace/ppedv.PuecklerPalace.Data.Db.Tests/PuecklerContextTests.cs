@@ -2,7 +2,7 @@ using AutoFixture;
 using AutoFixture.Kernel;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using ppedv.PuecklerPalace.Model;
+using ppedv.PuecklerPalace.Model.DomainModel;
 using System.Diagnostics;
 using System.Reflection;
 
