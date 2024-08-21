@@ -1,0 +1,44 @@
+﻿@page "/counter"
+@using ppedv.PuecklerPalace.Model.Contracts.Data
+@using ppedv.PuecklerPalace.Model.DomainModel
+@rendermode InteractiveServer
+@inject IRepository repo
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@if (eis == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach (var e in eis)
+    {
+        @e?.Name
+        <br />
+    }
+}
+@code {
+    private int currentCount = 0;
+
+    public List<Eissorte> eis;
+
+    protected override void OnInitialized()
+    {
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        eis = await Task.Run<List<Eissorte>>(() => repo.GetAll<Eissorte>().ToList());
+    }
+
+    private void IncrementCount()
+    {
+        currentCount += 10;
+    }
+}
