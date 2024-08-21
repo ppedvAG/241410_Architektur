@@ -31,9 +31,9 @@ namespace ppedv.PuecklerPalace.Data.Db
             return _context.Set<T>().Find(id);
         }
 
-        public IEnumerable<T> GetAll<T>() where T : Entity
+        public IQueryable<T> GetAll<T>() where T : Entity
         {
-            return _context.Set<T>().ToList();
+            return _context.Set<T>();
         }
 
         public int Save()

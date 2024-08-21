@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.PuecklerPalace.Data.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.PuecklerPalace.Logic", "ppedv.PuecklerPalace.Logic\ppedv.PuecklerPalace.Logic.csproj", "{3ED9A0E9-087E-422D-BFF6-CFE68F742789}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.PuecklerPalace.UI.DevConsole", "ppedv.PuecklerPalace.UI.DevConsole\ppedv.PuecklerPalace.UI.DevConsole.csproj", "{4BB0B07D-851D-4579-B855-79713E67F1CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3ED9A0E9-087E-422D-BFF6-CFE68F742789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ED9A0E9-087E-422D-BFF6-CFE68F742789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ED9A0E9-087E-422D-BFF6-CFE68F742789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB0B07D-851D-4579-B855-79713E67F1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB0B07D-851D-4579-B855-79713E67F1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB0B07D-851D-4579-B855-79713E67F1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB0B07D-851D-4579-B855-79713E67F1CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@ namespace ppedv.PuecklerPalace.Model.Contracts
 {
     public interface IRepository
     {
-        IEnumerable<T> GetAll<T>() where T : Entity;
+        IQueryable<T> GetAll<T>() where T : Entity;
         T? Get<T>(int id) where T : Entity;
 
         void Add<T>(T entity) where T : Entity;

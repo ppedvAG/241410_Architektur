@@ -3,6 +3,6 @@
     public enum Eistyp
     {
         Fruchteis,
-        Micheis
+        Milcheis
     }
 }
