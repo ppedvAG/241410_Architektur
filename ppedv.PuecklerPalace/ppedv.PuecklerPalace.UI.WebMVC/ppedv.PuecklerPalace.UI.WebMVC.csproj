@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.PuecklerPalace.Data.Db\ppedv.PuecklerPalace.Data.Db.csproj" />
+    <ProjectReference Include="..\ppedv.PuecklerPalace.Logic\ppedv.PuecklerPalace.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.PuecklerPalace.Model\ppedv.PuecklerPalace.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+  </ItemGroup>
+
+</Project>
