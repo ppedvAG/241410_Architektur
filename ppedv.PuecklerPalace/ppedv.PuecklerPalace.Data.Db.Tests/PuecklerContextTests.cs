@@ -157,10 +157,12 @@ namespace ppedv.PuecklerPalace.Data.Db.Tests
             using (var con = new PuecklerContext(conString))
             {
                 var loaded = con.Find<Bestellung>(best.Id);//Lazy Loading 
+
                 //var loaded = con.Bestellungen.Include(x => x.Positionen)
                 //                             .ThenInclude(x => x.Element)
                 //                             .ThenInclude(x => x.Zutaten)
                 //                             .FirstOrDefault(x => x.Id == best.Id); //Eager Loading 
+
                 //explizit loading 
                 //var loaded = con.Find<Bestellung>(best.Id);
                 //con.Entry(loaded).Collection(x => x.Positionen).Load();
