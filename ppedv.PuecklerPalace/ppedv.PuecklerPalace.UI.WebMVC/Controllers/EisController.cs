@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ppedv.PuecklerPalace.Model.Contracts;
+using ppedv.PuecklerPalace.Model.Contracts.Data;
 using ppedv.PuecklerPalace.Model.DomainModel;
 
 namespace ppedv.PuecklerPalace.UI.WebMVC.Controllers

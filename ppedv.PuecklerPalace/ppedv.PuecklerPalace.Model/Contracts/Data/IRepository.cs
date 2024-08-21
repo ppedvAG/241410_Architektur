@@ -1,6 +1,6 @@
 ﻿using ppedv.PuecklerPalace.Model.DomainModel;
 
-namespace ppedv.PuecklerPalace.Model.Contracts
+namespace ppedv.PuecklerPalace.Model.Contracts.Data
 {
     public interface IRepository
     {

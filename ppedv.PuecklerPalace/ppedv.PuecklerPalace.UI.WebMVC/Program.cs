@@ -1,4 +1,4 @@
-using ppedv.PuecklerPalace.Model.Contracts;
+using ppedv.PuecklerPalace.Model.Contracts.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

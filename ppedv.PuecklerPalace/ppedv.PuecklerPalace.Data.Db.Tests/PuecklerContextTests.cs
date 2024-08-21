@@ -29,7 +29,7 @@ namespace ppedv.PuecklerPalace.Data.Db.Tests
         [Trait("Category", "System")]
         public void Can_insert_Eisorte()
         {
-            var testEis = new Eissorte() { Eistyp = Eistyp.Micheis, Name = "Schokotest" };
+            var testEis = new Eissorte() { Eistyp = Eistyp.Milcheis, Name = "Schokotest" };
             var con = new PuecklerContext(conString);
             con.Database.EnsureCreated();
 
@@ -43,7 +43,7 @@ namespace ppedv.PuecklerPalace.Data.Db.Tests
         [Trait("Category", "System")]
         public void Can_read_Eisorte()
         {
-            var testEis = new Eissorte() { Eistyp = Eistyp.Micheis, Name = $"Joghurttest_{Guid.NewGuid()}" };
+            var testEis = new Eissorte() { Eistyp = Eistyp.Milcheis, Name = $"Joghurttest_{Guid.NewGuid()}" };
             using (var con = new PuecklerContext(conString))
             {
                 con.Database.EnsureCreated();

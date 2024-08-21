@@ -1,7 +1,8 @@
 ﻿using Autofac;
 using Microsoft.EntityFrameworkCore;
 using ppedv.PuecklerPalace.Logic;
-using ppedv.PuecklerPalace.Model.Contracts;
+using ppedv.PuecklerPalace.Model.Contracts.Data;
+using ppedv.PuecklerPalace.Model.Contracts.Services;
 using ppedv.PuecklerPalace.Model.DomainModel;
 
 Console.WriteLine("*** Pückler Palace v0.1 PREMIUM EDITION ***");
@@ -20,14 +21,15 @@ string conString = "Server=(localdb)\\mssqllocaldb;Database=PücklerDb_Test;Trus
 
 //DI per AutoFac
 var builder = new ContainerBuilder();
-builder.RegisterType<OrderService>();
+builder.RegisterType<OrderService>().As<IOrderService>();
+builder.RegisterType<EisService>().As<IEisService>();
 builder.Register(x => new ppedv.PuecklerPalace.Data.Db.PuecklerContextRepositoryAdapter(conString))
        .AsImplementedInterfaces()
        .As<IRepository>();
 
 var container = builder.Build();
 
-OrderService os = container.Resolve<OrderService>();
+IOrderService os = container.Resolve<IOrderService>();
 var repo = container.Resolve<IRepository>();
 
 foreach (var eis in repo.GetAll<Eissorte>().OrderBy(x => x.Preis))
@@ -36,3 +38,7 @@ foreach (var eis in repo.GetAll<Eissorte>().OrderBy(x => x.Preis))
 }
 
 Console.WriteLine($"Most Orderd: {os.GetMostOrderdEissorte()?.Name}");
+var best = new Bestellung();
+best.Positionen.Add(new BestellPosition() { Bestellung = best, Element = os.GetMostOrderdEissorte(), Amount = 3 });
+var result =  os.ProcessOrder(best);
+Console.WriteLine($"Bestellung: {result.Ok} {result.Sum}");
