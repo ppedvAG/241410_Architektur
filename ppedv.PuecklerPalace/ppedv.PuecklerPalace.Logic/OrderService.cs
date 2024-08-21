@@ -12,7 +12,7 @@ namespace ppedv.PuecklerPalace.Logic
             _repo = repo;
         }
 
-        public decimal CalcOrderSumm(Bestellung bestellung)
+        public decimal CalcOrderSum(Bestellung bestellung)
         {
             ArgumentNullException.ThrowIfNull(bestellung);
 
@@ -21,7 +21,9 @@ namespace ppedv.PuecklerPalace.Logic
 
         public Eissorte? GetMostOrderdEissorte()
         {
-            return _repo.GetAll<Eissorte>().OrderBy(x => x.Positionen.Count()).FirstOrDefault();
+            return _repo.GetAll<Eissorte>()
+                        .OrderByDescending(x => x.Positionen.Count())
+                        .FirstOrDefault();
         }
 
     }
