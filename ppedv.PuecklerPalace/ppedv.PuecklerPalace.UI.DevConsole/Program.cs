@@ -23,16 +23,16 @@ string conString = "Server=(localdb)\\mssqllocaldb;Database=PücklerDb_Test;Trus
 var builder = new ContainerBuilder();
 builder.RegisterType<OrderService>().As<IOrderService>();
 builder.RegisterType<EisService>().As<IEisService>();
-builder.Register(x => new ppedv.PuecklerPalace.Data.Db.PuecklerContextRepositoryAdapter(conString))
+builder.Register(x => new ppedv.PuecklerPalace.Data.Db.PuecklerContextUnitOfWorkAdapter(conString))
        .AsImplementedInterfaces()
-       .As<IRepository>();
+       .As<IUnitOfWork>();
 
 var container = builder.Build();
 
 IOrderService os = container.Resolve<IOrderService>();
-var repo = container.Resolve<IRepository>();
+var uwo = container.Resolve<IUnitOfWork>();
 
-foreach (var eis in repo.GetAll<Eissorte>().OrderBy(x => x.Preis))
+foreach (var eis in uwo.EisRepo.GetAll().OrderBy(x => x.Preis))
 {
     Console.WriteLine($"{eis.Name} - {eis.Eistyp} {eis.Preis}");
 }

@@ -2,15 +2,14 @@
 
 namespace ppedv.PuecklerPalace.Model.Contracts.Data
 {
-    public interface IRepository
+
+    public interface IRepository<T> where T : Entity
     {
-        IQueryable<T> GetAll<T>() where T : Entity;
-        T? Get<T>(int id) where T : Entity;
+        IQueryable<T> GetAll();
+        T? Get(int id);
 
-        void Add<T>(T entity) where T : Entity;
-        void Delete<T>(T entity) where T : Entity;
-        void Update<T>(T entity) where T : Entity;
-
-        int Save();
+        void Add(T entity);
+        void Delete(T entity);
+        void Update(T entity);
     }
 }

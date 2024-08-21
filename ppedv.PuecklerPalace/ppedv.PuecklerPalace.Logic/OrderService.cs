@@ -6,12 +6,12 @@ namespace ppedv.PuecklerPalace.Logic
 {
     public  class OrderService : IOrderService
     {
-        private IRepository _repo;
+        private readonly IUnitOfWork unitOfWork;
         private readonly IEisService _eisService;
 
-        public OrderService(IRepository repo, IEisService eisService)
+        public OrderService(IUnitOfWork unitOfWork, IEisService eisService)
         {
-            _repo = repo;
+            this.unitOfWork = unitOfWork;
             _eisService = eisService;
         }
 
@@ -34,7 +34,7 @@ namespace ppedv.PuecklerPalace.Logic
 
         public Eissorte? GetMostOrderdEissorte()
         {
-            return _repo.GetAll<Eissorte>()
+            return unitOfWork.EisRepo.GetAll()
                         .OrderByDescending(x => x.Positionen.Count())
                         .FirstOrDefault();
         }

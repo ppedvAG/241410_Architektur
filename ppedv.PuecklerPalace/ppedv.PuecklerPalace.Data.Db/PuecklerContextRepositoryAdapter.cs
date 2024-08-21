@@ -3,45 +3,37 @@ using ppedv.PuecklerPalace.Model.DomainModel;
 
 namespace ppedv.PuecklerPalace.Data.Db
 {
-    public class PuecklerContextRepositoryAdapter : IRepository
+    public class PuecklerContextRepositoryAdapter<T> : IRepository<T> where T : Entity
     {
-        private PuecklerContext _context;
+        protected PuecklerContext _context;
 
-        public PuecklerContextRepositoryAdapter(string conString)
+        public PuecklerContextRepositoryAdapter(PuecklerContext context)
         {
-            _context = new PuecklerContext(conString);
+            _context = context;
         }
 
-        public void Add<T>(T entity) where T : Entity
+
+        public void Add(T entity)
         {
-            //if (typeof(T) == typeof(Eissorte))
-                //_context.Eissorten.Add(entity as Eissorte);
-                    
             _context.Add(entity);
         }
 
-
-        public void Delete<T>(T entity) where T : Entity
+        public void Delete(T entity)
         {
             _context.Remove(entity);
         }
 
-        public T? Get<T>(int id) where T : Entity
+        public T? Get(int id)
         {
             return _context.Set<T>().Find(id);
         }
 
-        public IQueryable<T> GetAll<T>() where T : Entity
+        public IQueryable<T> GetAll()
         {
             return _context.Set<T>();
         }
 
-        public int Save()
-        {
-            return _context.SaveChanges();
-        }
-
-        public void Update<T>(T entity) where T : Entity
+        public void Update(T entity)
         {
             _context.Update(entity);
         }

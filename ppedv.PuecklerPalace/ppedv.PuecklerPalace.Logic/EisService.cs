@@ -6,16 +6,16 @@ namespace ppedv.PuecklerPalace.Logic
 {
     public class EisService : IEisService
     {
-        private readonly IRepository repo;
+        private readonly IUnitOfWork unitOfWork;
 
-        public EisService(IRepository repo)
+        public EisService(IUnitOfWork unitOfWork)
         {
-            this.repo = repo;
+            this.unitOfWork = unitOfWork;
         }
 
         public bool IsEisAvailable(Eissorte eis)
         {
-            return repo.GetAll<Eissorte>().Any(x => x.Name == eis.Name);
+            return unitOfWork.EisRepo.GetAll().Any(x => x.Name == eis.Name);
         }
     }
 }
